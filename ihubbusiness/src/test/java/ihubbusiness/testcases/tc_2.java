@@ -27,23 +27,24 @@ public class tc_2 {
 
 @DataProvider(name="vikas")
 //public Object[][] testdata() throws IOException {
-public Object[][] data() throws IOException {
+public Object[][] data() throws IOException  {
 	
-	Object[][] d = null;
 	
 	FileInputStream fis  = new FileInputStream("C:\\Users\\VIKAS\\Desktop\\testdata.xls");
 	HSSFWorkbook wb = new HSSFWorkbook(fis);
 	HSSFSheet sh = wb.getSheetAt(0);
 		
-		 d = new Object[sh.getLastRowNum()][2];
+	Object[][] d =new Object[sh.getLastRowNum()][2];
 		
-	for(int i =1;i<=3;i++) {
-		for(int j= 0;j<=2;j++) {
+	for(int i =1;i<=sh.getLastRowNum();i++) {
+		for(int j= 0;j<2;j++) {
 			
 		d[i-1][j] = sh.getRow(i).getCell(j).getStringCellValue();
-	return d;
+				
 	}
 		}
 	return d;
+	
+	
 	} 
 }
