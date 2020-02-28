@@ -8,31 +8,42 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.google.common.collect.ObjectArrays;
+
 import ihubbusiness.dataprovider.data;
 import ihubbusiness.pageobjects.login;
 
 public class tc_2 {
+	
+	
+
   @Test(dataProvider="vikas")
-  public void f(String user,String pass,String test) throws IOException {
+  public void f(String user,String pass) throws IOException {
 	
 	System.out.println(user);
+	System.out.println(pass);
 	  	  
   }
 
 @DataProvider(name="vikas")
 //public Object[][] testdata() throws IOException {
 public Object[][] data() throws IOException {
-	int i;
-	Object[][] d = new Object[2][3];
 	
-		FileInputStream fis  = new FileInputStream("C:\\Users\\VIKAS\\Desktop\\testdata.xls");
-		HSSFWorkbook wb = new HSSFWorkbook(fis);
-		HSSFSheet sh = wb.getSheetAt(0);
-	for(i =0;i<=sh.getLastRowNum();i++) {
-		d[i][0] = sh.getRow(i).getCell(1).getStringCellValue();
-		d[i][1] =sh.getRow(i).getCell(2).getStringCellValue();
-		d[i][2] = "vikas";
- return d;
+	Object[][] d = null;
+	
+	FileInputStream fis  = new FileInputStream("C:\\Users\\VIKAS\\Desktop\\testdata.xls");
+	HSSFWorkbook wb = new HSSFWorkbook(fis);
+	HSSFSheet sh = wb.getSheetAt(0);
+		
+		 d = new Object[sh.getLastRowNum()][2];
+		
+	for(int i =1;i<=3;i++) {
+		for(int j= 0;j<=2;j++) {
+			
+		d[i-1][j] = sh.getRow(i).getCell(j).getStringCellValue();
+	return d;
 	}
-
-	return d;}}
+		}
+	return d;
+	} 
+}
