@@ -15,7 +15,7 @@ import ihubbusiness.pageobjects.login;
 
 public class tc_2 {
 	
-	
+
 
   @Test(dataProvider="vikas")
   public void f(String user,String pass) throws IOException {
@@ -37,14 +37,12 @@ public Object[][] data() throws IOException  {
 	Object[][] d =new Object[sh.getLastRowNum()][2];
 		
 	for(int i =1;i<=sh.getLastRowNum();i++) {
-		for(int j= 0;j<2;j++) {
+		for(int j=1 ;j<3;j++) {
 			
-		d[i-1][j] = sh.getRow(i).getCell(j).getStringCellValue();
+		d[i-1][j-1] = sh.getRow(i).getCell(j).getStringCellValue();
 				
 	}
 		}
-	return d;
-	
-	
+	return d;	
 	} 
 }

@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ihubbusiness.testcases.tc_2">
+      <class name="ihubbusiness.testcases.tc_1">
         <methods>
-          <include name="f"/>
+          <include name="setup"/>
+          <include name="close"/>
+          <include name="test" invocation-numbers="0"/>
         </methods>
-      </class> <!-- ihubbusiness.testcases.tc_2 -->
+      </class> <!-- ihubbusiness.testcases.tc_1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

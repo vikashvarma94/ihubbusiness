@@ -6,12 +6,28 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
+
+
+import ihubbusiness.dataprovider.data;
+
 public class baseclass {
 public static WebDriver driver;
+
+
 	@BeforeTest
+	
 	public void setup() {
-		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\drivers\\chromedriver.exe");
-		  driver = new ChromeDriver();	
+		String browser = "chrome";
+		
+		if(browser.equalsIgnoreCase("Chrome")) {
+			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\drivers\\chromedriver.exe");
+			driver = new ChromeDriver();	
+		}
+		  
+		  else if(browser.equalsIgnoreCase("firefox")) {
+			  System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\drivers\\chromedriver.exe");
+			  driver = new ChromeDriver();
+		  }
 	}
 	
 	@AfterTest

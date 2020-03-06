@@ -15,25 +15,22 @@ public class data {
 	
 
 	
-	@DataProvider(name ="vikas")
-	//public Object[][] testdata() throws IOException {
-	public Object[][] data() throws IOException {
-		Object[][] d = new Object[10][10];
+	@DataProvider(name="vikas")
+		public Object[][] data() throws IOException  {
 		
-			FileInputStream fis  = new FileInputStream("C:\\Users\\VIKAS\\Desktop\\testdata.xls");
-			HSSFWorkbook wb = new HSSFWorkbook(fis);
-			HSSFSheet sh = wb.getSheetAt(0);
-		for(int i =1;i<=sh.getLastRowNum();i++) {
-			d[i][1] = sh.getRow(i).getCell(1).getStringCellValue();
-			d[i][1] = sh.getRow(i).getCell(2).getStringCellValue();
-
-//    return new Object[][] {
-//            { user, pass } };
-//		}
-//@Test(dataProvider = "vikas")
-//public void f() {	
-
-		return d;
-}
-		return d;
-		}}
+		
+		FileInputStream fis  = new FileInputStream("C:\\Users\\VIKAS\\Desktop\\testdata.xls");
+		HSSFWorkbook wb = new HSSFWorkbook(fis);
+		HSSFSheet sh = wb.getSheetAt(0);
+			
+		Object[][] d =new Object[1][4];
+			
+		for(int i =1;i<=1;i++) {
+			for(int j=1 ;j<5;j++) {
+				
+			d[i-1][j-1] = sh.getRow(i).getCell(j).getStringCellValue();				
+		}
+			}
+		return d;	
+		} 
+	}
