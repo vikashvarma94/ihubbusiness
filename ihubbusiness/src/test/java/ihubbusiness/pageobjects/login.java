@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import ihubbusiness.dataprovider.data;
 
-public class login extends data{
+public class login {
 	 
 	public static WebDriver driver;
 	
@@ -22,8 +22,13 @@ public class login extends data{
 	
 	@FindBy(xpath="(//button[@type='submit'])[1]")
 	static WebElement submit;
-
 	
+	@FindBy(xpath="(//button[@type=\"button\"])[2]")
+	static WebElement clear;
+
+	@FindBy(linkText = "Click here to Register Buyer Account")
+	public
+	static WebElement register;
 
 	public login(WebDriver driver) {
 		this.driver = driver;

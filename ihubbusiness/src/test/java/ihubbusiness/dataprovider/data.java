@@ -33,4 +33,45 @@ public class data {
 			}
 		return d;	
 		} 
+	
+
+@DataProvider(name="web")
+public Object[][] data1() throws IOException  {
+
+
+FileInputStream fis  = new FileInputStream("C:\\Users\\VIKAS\\Desktop\\testdata.xls");
+HSSFWorkbook wb = new HSSFWorkbook(fis);
+HSSFSheet sh = wb.getSheetAt(1);
+	
+Object[][] d =new Object[1][4];
+	
+for(int i =1;i<=1;i++) {
+	for(int j=1 ;j<5;j++) {
+		
+	d[i-1][j-1] = sh.getRow(i).getCell(j).getStringCellValue();				
+}
 	}
+return d;	
+} 
+
+
+
+@DataProvider(name="reg")
+public Object[][] data2() throws IOException  {
+
+
+FileInputStream fis  = new FileInputStream("C:\\Users\\VIKAS\\Desktop\\testdata.xls");
+HSSFWorkbook wb = new HSSFWorkbook(fis);
+HSSFSheet sh = wb.getSheetAt(2);
+	
+Object[][] d =new Object[1][16];
+	
+for(int i =1;i<=1;i++) {
+	for(int j=1 ;j<17;j++) {
+		
+	d[i-1][j-1] = sh.getRow(i).getCell(j).getStringCellValue();				
+}
+	}
+return d;	
+} 
+}

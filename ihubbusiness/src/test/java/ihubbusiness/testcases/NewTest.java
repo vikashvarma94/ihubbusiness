@@ -27,11 +27,12 @@ for (int i = split.length - 1; i >= 0; i--) {
 System.out.println(result);
 }
 
+
 @Test
 public void c() {
-	String[] sp = s.split(" ");
 	
-	System.out.println(sp.length);
+	StringBuilder st = new StringBuilder();
+	st.append(s);
 	
-	
+	System.out.println(st.reverse());	
 }}

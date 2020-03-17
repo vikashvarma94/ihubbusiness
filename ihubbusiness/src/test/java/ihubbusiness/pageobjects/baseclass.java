@@ -32,6 +32,6 @@ public static WebDriver driver;
 	
 	@AfterTest
 	public void close() {
-		driver.close();
+		//driver.close();
 	}
 }
